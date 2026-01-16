@@ -11,7 +11,6 @@ from PCR import (
     pcr_for_symbols_multiwindow,
 )
 
-
 def flow_vs_positioning_divergence(df: pd.DataFrame) -> pd.DataFrame:
     # We require a consistent schema because this is used as a generic “snapshot” transformer
     req = {"Symbol", "Basis", "PCR"}

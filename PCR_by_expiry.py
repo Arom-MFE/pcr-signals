@@ -6,7 +6,6 @@ import pandas as pd
 import yfinance as yf
 import matplotlib.pyplot as plt
 
-
 # Broad index ETFs used as proxies for systemic, cross-asset stress
 DEFAULT_SYMBOLS = ["SPY", "QQQ", "DIA", "IWM", "XLF", "KRE"]
 

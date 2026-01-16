@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
-
 # We explicitly distinguish between flow (volume) and positioning (open interest)
 Basis = Literal["volume", "openInterest"]
 
