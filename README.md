@@ -12,7 +12,7 @@ All CSV files generated represent **single-moment market snapshots**. They are i
 
 ## Repository Structure
 
-```text
+
 pcr-signals/
 │
 ├── PCR.py                       # Core PCR computations (all expiries/maturity windows)
