@@ -34,4 +34,25 @@ the code highlights **where stress, hedging demand, and positioning are concentr
 ---
 
 ## Repository Structure
+pcr-signals/
+│
+├── PCR.py
+│ Core PCR computations across all expiries and maturity windows
+│
+├── PCR_by_expiry.py
+│ Per-expiry aggregation and visualization
+│
+├── PCR_by_expiry_signals.py
+│ Derived per-expiry signals and metrics
+│
+├── PCR_snapshot_report.py
+│ Console-based cross-sectional snapshot report
+│
+├── export_pcr_datasets.py
+│ Exports snapshot CSV outputs
+│
+├── example_outputs/
+│ Example CSVs generated at a single point in time
+│
+└── README.md
 
