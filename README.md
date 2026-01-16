@@ -11,17 +11,9 @@ All CSV files generated represent **single-moment market snapshots**. They are i
 ---
 
 ## Repository Structure
-
-
-pcr-signals/
-│
-├── PCR.py                       # Core PCR computations (all expiries/maturity windows)
-├── PCR_by_expiry.py             # Per-expiry aggregation and visualization
-├── PCR_by_expiry_signals.py     # Derived per-expiry signals and impulse metrics
-├── PCR_snapshot_report.py       # Console-based cross-sectional snapshot report
-├── export_pcr_datasets.py       # Utility to export snapshots to CSV
-├── example_outputs/             # Example CSVs generated at a single point in time
-└── README.md                    # Documentation and metric definitions
+pcr-signals/ ├── PCR.py # Core PCR computations (all expiries/maturity windows) ├── PCR_by_expiry.py # Per-expiry aggregation and visualization ├── PCR_by_expiry_signals.py # Derived per-expiry signals and impulse metrics ├── PCR_snapshot_report.py # Console-based cross-sectional snapshot report ├── export_pcr_datasets.py # Utility to export snapshots to CSV ├── example_outputs/ # Example CSVs generated at a single point in time └── README.md # Documentation and metric definitions
+---
+---
 
 ## What the Code Computes
 
@@ -41,18 +33,22 @@ By comparing these measures across expirations, maturity windows, and index ETFs
 ### 1. Put–Call Ratio (PCR)
 
 **Volume-based PCR**
+
 $$\text{Volume\_PCR} = \frac{\text{Put Volume}}{\text{Call Volume}}$$
+
 Measures short-term **flow-driven hedging demand**.
 
 **Open-Interest-based PCR**
+
 $$\text{OI\_PCR} = \frac{\text{Put Open Interest}}{\text{Call Open Interest}}$$
+
 Measures **embedded positioning** and longer-term risk exposure.
 
 ---
 
 ### 2. Flow vs Positioning Divergence
 
-$$\text{Divergence}_{\text{Vol−OI}} = \text{Volume\_PCR} - \text{OI\_PCR}$$
+$$\text{Divergence}_{\text{Vol-OI}} = \text{Volume\_PCR} - \text{OI\_PCR}$$
 
 * **Positive**: Flow is more bearish than existing positioning.
 * **Negative**: Positioning is already more bearish than current flow.
