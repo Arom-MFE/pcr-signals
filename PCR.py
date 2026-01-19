@@ -16,8 +16,8 @@ DEFAULT_SYMBOLS = ["SPY", "QQQ", "DIA", "IWM", "XLF", "KRE"]
 # Term-structure windows chosen to separate short-dated hedging from structural risk
 WINDOW_SPECS = [
     {"name": "DTE_1_20", "dte_min": 1, "dte_max": 20, "strike_pct": 0.10},
-    {"name": "DTE_20_60", "dte_min": 20, "dte_max": 60, "strike_pct": 0.10},
-    {"name": "DTE_60_120", "dte_min": 60, "dte_max": 120, "strike_pct": 0.10},
+    {"name": "DTE_21_60", "dte_min": 21, "dte_max": 60, "strike_pct": 0.10},
+    {"name": "DTE_61_120", "dte_min": 61, "dte_max": 120, "strike_pct": 0.10},
 ]
 
 
@@ -171,27 +171,6 @@ def pcr_for_symbols_all(
             rows.append(pcr_all_expiries_all_strikes(sym, b))
     return pd.DataFrame(rows)
 
-
-def pcr_for_symbols_windowed(
-    symbols: Iterable[str] = DEFAULT_SYMBOLS,
-    dte_min: int = 20,
-    dte_max: int = 60,
-    strike_pct: float = 0.10,
-) -> pd.DataFrame:
-    # Focuses on a single maturity band to isolate timing effects
-    rows = []
-    for sym in symbols:
-        for b in BASES:
-            rows.append(
-                pcr_windowed(
-                    sym,
-                    basis=b,
-                    dte_min=dte_min,
-                    dte_max=dte_max,
-                    strike_pct=strike_pct,
-                )
-            )
-    return pd.DataFrame(rows)
 
 
 def pcr_for_symbols_multiwindow(
